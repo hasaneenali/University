@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="form-group">
+    <label for="search" class="sr-only">البحث</label>
+    <input (click)="onQuery()" [(ngModel)]="apiService.college.name" type="search" name="search" id="search" class="form-control" placeholder="search book title..." autocomplete="off">
+    <button class="btn btn-primary btn-block" (click)="onQuery()"><i class="fas fa-search"></i> Search</button>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ت</th>
+      <th>اسم الكليه</th>
+      <th>اسم الجامعه</th>
+      <th>اصورة الكليه</th>
+    </tr>
+  </thead>
+
+
+
+  <tbody>
+    <tr *ngFor="let college of Colleges">
+     <td>{{college.collegeId}}</td>
+     <td>{{college.name}}</td>
+     <td>{{college.university.name}}</td>
+     <td><img [src]="college.imageUrl" width=80px/> </td>
+  
+    </tr>
+  </tbody>
+</table>

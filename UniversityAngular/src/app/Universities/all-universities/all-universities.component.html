@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>تسلسل</th>
+      <th>الاسم </th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let university of Universities">
+      <td>{{university.universityId}}</td>
+      <td>{{university.name}}</td>
+      
+       <button [routerLink]="['/addUniversities']" >الاضافه</button>
+     
+     </tr>
+
+    
+     
+  
+  </tbody>
+</table>
+

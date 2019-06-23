@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>ت</th>
+      <th>اسم الكليه</th>
+      <th>اسم الجامعه</th>
+      <th>اصورة الكليه</th>
+    </tr>
+  </thead>
+
+
+
+  <tbody>
+    <tr *ngFor="let college of Colleges">
+     <td>{{college.collegeId}}</td>
+     <td>{{college.name}}</td>
+     <td>{{college.university.name}}</td>
+   <td><img [src]="college.imageUrl" width=80px/> </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,26 @@
+
+
+
+ <form class="form-group" [formGroup]="categoryForm" >
+
+  <div class="form group">
+    <label for="name"  >الاسم</label>
+    <input type="text"  formControlName="name"  >
+  </div>
+
+  <div class="form group">
+    <label for="name">اسم الجامعه</label>
+    
+  <select formControlName="universityId"  >
+    <option value="undefined">Please select Value</option>
+    <option *ngFor="let university of universitiers"  
+    value="{{ university.universityId }}">
+    {{ university.name }}</option>
+    </select>  
+
+</div>
+  <button class="btn btn-primary" (click)="addCategory()" >Add</button>
+
+</form>
+
+<app-upload (onUploadFinished)="uploadFinished($event)"></app-upload>

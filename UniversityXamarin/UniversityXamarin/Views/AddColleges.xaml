@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:UniversityXamarin.Controls;assembly=UniversityXamarin"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             x:Class="UniversityXamarin.Views.AddColleges">
+    <ContentPage.Content>
+
+        <ScrollView BindingContext="{Binding NewCustomer}">
+
+            <StackLayout   Padding="20" BackgroundColor="AntiqueWhite">
+            
+            <StackLayout Orientation="Horizontal">
+                <Label Text="NameCollege" HorizontalOptions="Start"/>
+                <Entry Text="{Binding Name,Mode=TwoWay}"   HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="NameUnivirsity" HorizontalOptions="Start"/>
+                
+                <controls:BindablePicker
+          Title="Selection NameUnivirsity"
+          DisplayMemberPath="Name"
+          SelectedValuePath="UniversityId"
+          ItemsSource="{Binding Departments}"
+          SelectedValue ="{Binding Path=UniversityId, Mode=TwoWay}"
+          HorizontalOptions="FillAndExpand"
+          VerticalOptions="Center">
+                </controls:BindablePicker>
+                
+
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                    <Button Text="AddColleges" Command="{Binding NewCustomerCommand}" WidthRequest="200"   TextColor="White" CornerRadius="20"  BackgroundColor="Blue"/>
+            </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+
+                    <Image
+                        HeightRequest="200"
+                        Source="{Binding ImageSource}"
+                        WidthRequest="200">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChangeImageCommand}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                 </StackLayout>
+
+              
+
+
+
+
+
+            </StackLayout>
+            </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>
